@@ -3,7 +3,7 @@
   flex-direction: column;
   background-image: url(../profile/images/windows-xp-wallpaper-bliss.jpg);
   /* background-repeat: no-repeat; */
-  background-size: cover;
+  /* background-size: cover; */
   background-repeat: no-repeat, no-repeat, repeat-x;
   justify-content: center;
   color: rgb(255, 255, 255);
@@ -17,12 +17,26 @@
   flex-direction: column;
   margin: 0 auto;
   text-align: center;
+  margin-top: 40px;
  }
 .img{
   width: auto;
   height: 450px;
   margin-bottom: 20px;
-  margin-top: 20px
+  /* margin-top: 50px */
+
+}
+.img {
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+  border: 5px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  transform: translatey(0px);
+  animation: header 6s ease-in-out infinite;
+  /* img { width: 100%; height: auto; } */
 }
 .img:hover {
    transform: scale(1.2);
@@ -30,8 +44,97 @@
     filter: grayscale(100%);
 }
  .click{
-  padding-top: 20px ;
+  padding-top: 40px ;
   display: flex;
   flex-direction: column;
   margin: auto;
+}
+.bold1{
+  width: 180px;
+}
+
+@keyframes header {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+}
+/* */
+
+button{
+  /* display: block; */
+  /* width: 170px; */
+  /* height: 40px; */
+  /* line-height: 40px; */
+  font-size: 20px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .45s;
+  box-sizing: border-box;
+  border: 5px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  transform: translatey(0px);
+  animation: header 6s ease-in-out infinite;
+  background-color: white;
+
+}
+
+/* a span{
+  position: relative;
+  z-index: 2;
+} */
+
+a:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ffffff;
+  transition: all .99s;
+}
+
+/* a:hover{
+  color: #fff;
+} */
+
+
+a:hover:after{
+  width: 100%;
+}
+.flicker {
+  font-size: 14px;
+  font-family: 'Merienda', sans-serif;
+  /* margin: 1rem auto; */
+  color: #fffefe61;
+  background: -webkit-gradient(linear, left top, right top, from(#e6e6e6), to(#1d1c1c), color-stop(0.9, #ffffff)) no-repeat;
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.8, #fff)) no-repeat;
+  background-size: 80px 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: flick 3s infinite;
+}
+@keyframes flick {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
 }
